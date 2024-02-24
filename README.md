@@ -36,3 +36,4 @@
 
 
 
+6- there are postman collections that has all the routes specificed in task description
