@@ -25,7 +25,6 @@ testcases_bp = Blueprint('testcases', __name__, url_prefix='/testcases')
 
 @testcases_bp.route('', methods=['GET'])
 @jwt_required()
-@role_required('admin')
 def get_testcases():
     print(request.user_id)
     testcases = TestCase.query.all()
@@ -66,7 +65,6 @@ def create_testcase(asset_id):
 
 @testcases_bp.route('/testasset/<int:asset_id>', methods=['GET'])
 @jwt_required()
-@role_required('admin')
 def Get_all_testcases_for_specific_asset_id(asset_id):
     executions = ExecutionResult.query.join(TestCase).filter(TestCase.asset_id == asset_id).all()
     result = [{'id': tc.id, 'status': tc.status} for tc in executions]

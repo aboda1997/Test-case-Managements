@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "1a339809-a5e8-489c-a288-05a1613946c0",
+		"name": "test_cases_managements",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14586767"
+	},
+	"item": [
+		{
+			"name": "testCasesExecutions",
+			"item": [
+				{
+					"name": "allExecutionByassetId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/testcases/testasset/1/execution",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"testcases",
+								"testasset",
+								"1",
+								"execution"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createExecution",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/testcases/1/execution",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"testcases",
+								"1",
+								"execution"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allTestCases",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODczMzM2NywianRpIjoiNmMzZDE3MDAtYjI2Yy00ZTcxLWE5MjQtMTcwZmRjZGI5Y2QxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzA4NzMzMzY3LCJjc3JmIjoiZjk3YjY1ZTYtZWQzYi00YWQ2LWFhYTAtMzYxZjdmMzc0ZGEzIiwiZXhwIjoxNzA4NzM0MjY3LCJyb2xlIjoiYWRtaW4iLCJ1c2VyIjoxfQ.GpoD6m8htVowyEnBJilw1dDZhDSW7-Nhw77Hb1G_nBo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/testcases",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"testcases"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTestCaseById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODczODk3MSwianRpIjoiMDdjZTBkNDAtYmYxYS00NzgwLWIxODctMWY2MjQ2N2E2ZGIxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzA4NzM4OTcxLCJjc3JmIjoiMTcxZmE1MDgtNjE2MC00ODBhLWFhOWEtOTM0NDJhMTYwNjgxIiwiZXhwIjoxNzA4NzM5ODcxLCJyb2xlIjoiYWRtaW4iLCJ1c2VyIjoxfQ.9WWzYEVQNs-st760KD6Rj3gOBVIA7byvQC6vDmQ9qM4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/testcases/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"testcases",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTestCaseById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"get all only one test case\", \r\n    \"description\":\"return only one testcase from database using postman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/testcases/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"testcases",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTestCaseById",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "createTestCase",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODczODk3MSwianRpIjoiMDdjZTBkNDAtYmYxYS00NzgwLWIxODctMWY2MjQ2N2E2ZGIxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzA4NzM4OTcxLCJjc3JmIjoiMTcxZmE1MDgtNjE2MC00ODBhLWFhOWEtOTM0NDJhMTYwNjgxIiwiZXhwIjoxNzA4NzM5ODcxLCJyb2xlIjoiYWRtaW4iLCJ1c2VyIjoxfQ.9WWzYEVQNs-st760KD6Rj3gOBVIA7byvQC6vDmQ9qM4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/testcases/testasset/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"testcases",
+						"testasset",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
